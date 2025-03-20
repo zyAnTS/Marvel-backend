@@ -19,12 +19,12 @@ router.get("/characters", async (req, res) => {
 
     if (req.query.name) {
       // const name = new RegExp(req.query.name, "i");
-      filters += "&name" + req.query.name;
+      filters += "&name=" + req.query.name;
     }
 
     if (req.query.page) {
       const skip = (req.query.page - 1) * limit;
-      filters += "&skip" + skip;
+      filters += "&skip=" + skip;
     }
 
     // extraire

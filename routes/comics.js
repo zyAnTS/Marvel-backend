@@ -17,12 +17,12 @@ router.get("/comics", async (req, res) => {
     }
 
     if (req.query.title) {
-      filters += "&name" + req.query.title;
+      filters += "&name=" + req.query.title;
     }
 
     if (req.query.page) {
       const skip = (req.query.page - 1) * limit;
-      filters += "&skip" + skip;
+      filters += "&skip=" + skip;
     }
 
     // extraire
