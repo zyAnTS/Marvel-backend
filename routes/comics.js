@@ -5,6 +5,7 @@ router.get("/comics", async (req, res) => {
   try {
     // identifier
     console.log("New comics request...");
+    console.log(req.query);
 
     // filtrer
     let limit = 100;
@@ -17,7 +18,7 @@ router.get("/comics", async (req, res) => {
     }
 
     if (req.query.title) {
-      filters += "&name=" + req.query.title;
+      filters += "&title=" + req.query.title;
     }
 
     if (req.query.page) {
@@ -38,7 +39,7 @@ router.get("/comics", async (req, res) => {
     // retourner
     console.log("Comics count :", list.count);
     console.log("--------------------------");
-    return res.status(200).json(comicsList);
+    return res.status(200).json(list);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }

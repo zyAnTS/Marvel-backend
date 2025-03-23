@@ -40,7 +40,7 @@ router.get("/characters", async (req, res) => {
     // retourner
     console.log("Characters count :", list.count);
     console.log("--------------------------");
-    return res.status(200).json(charactersList);
+    return res.status(200).json(list);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
